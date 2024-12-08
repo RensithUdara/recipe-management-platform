@@ -1,8 +1,8 @@
 // src/components/MealPlanner.js
 import React from "react";
+import { Typography, List, ListItem, Card, CardContent } from "@mui/material";
 
 function MealPlanner() {
-  // Example static meal plan
   const mealPlan = [
     { day: "Monday", recipe: "Chicken Soup" },
     { day: "Tuesday", recipe: "Vegetable Stir Fry" },
@@ -11,14 +11,18 @@ function MealPlanner() {
 
   return (
     <div>
-      <h2>Meal Planner</h2>
-      <ul>
-        {mealPlan.map((meal, index) => (
-          <li key={index}>
-            {meal.day}: {meal.recipe}
-          </li>
-        ))}
-      </ul>
+      <Typography variant="h6" gutterBottom>
+        Meal Planner
+      </Typography>
+      <Card sx={{ padding: 2 }}>
+        <List>
+          {mealPlan.map((meal, index) => (
+            <ListItem key={index}>
+              {meal.day}: {meal.recipe}
+            </ListItem>
+          ))}
+        </List>
+      </Card>
     </div>
   );
 }

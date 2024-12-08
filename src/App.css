@@ -1,38 +1,229 @@
+/* src/index.css */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+/* App Container */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: #fafafa;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Heading styles */
+h1 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Recipe Card */
+.recipe-card {
+  width: 100%;
+  max-width: 345px;
+  margin: 0 auto 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.recipe-card:hover {
+  transform: scale(1.05);
+}
+
+.recipe-card img {
+  border-radius: 8px 8px 0 0;
+  object-fit: cover;
+}
+
+.recipe-card-content {
+  padding: 15px;
+}
+
+/* Search Bar */
+.recipe-search input {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 30px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.recipe-search input:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+/* Button Styling */
+button {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #b0c4de;
+  cursor: not-allowed;
+}
+
+/* Form Styling */
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+/* Recipe List */
+.recipe-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.recipe-list .recipe-card {
+  margin: 10px;
+}
+
+/* Meal Planner */
+.meal-planner {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.meal-planner h2 {
+  text-align: center;
+  color: #333;
+}
+
+/* Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Typography */
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #007BFF;
+  margin-bottom: 15px;
+}
+
+h3, h4 {
+  font-size: 1.25rem;
+  color: #555;
+}
+
+h5, h6 {
+  font-size: 1rem;
+  color: #888;
+}
+
+/* Recipe Detail Page */
+.recipe-detail {
+  margin-top: 20px;
+}
+
+.recipe-detail h2 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.recipe-detail img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.recipe-detail .ingredients,
+.recipe-detail .instructions {
+  margin-top: 20px;
+}
+
+.recipe-detail .ingredients ul,
+.recipe-detail .instructions ol {
+  padding-left: 20px;
+}
+
+.recipe-detail .ingredients li,
+.recipe-detail .instructions li {
+  margin-bottom: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .recipe-search input {
+    margin-bottom: 20px;
+  }
+
+  .recipe-list {
+    display: block;
+  }
+
+  .meal-planner {
+    padding: 15px;
+  }
+
+  form input,
+  form textarea {
+    padding: 8px;
+  }
+
+  button {
+    padding: 8px 12px;
   }
 }

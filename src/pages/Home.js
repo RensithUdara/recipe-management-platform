@@ -1,5 +1,6 @@
 // src/pages/Home.js
 import React, { useState, useEffect } from "react";
+import { Grid, TextField, Button, Box, Typography, Paper } from "@mui/material";
 import RecipeList from "../components/RecipeList";
 import RecipeSearch from "../components/RecipeSearch";
 import AddRecipeForm from "../components/AddRecipeForm";
@@ -13,11 +14,23 @@ function Home() {
   }, []);
 
   return (
-    <div>
-      <RecipeSearch />
-      <AddRecipeForm setRecipes={setRecipes} />
-      <RecipeList recipes={recipes} />
-    </div>
+    <Box>
+      <Grid container spacing={3}>
+        <Grid item xs={12} md={6}>
+          <RecipeSearch />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <AddRecipeForm setRecipes={setRecipes} />
+        </Grid>
+      </Grid>
+
+      <Typography variant="h4" gutterBottom mt={5}>
+        Recipe List
+      </Typography>
+      <Paper elevation={3} sx={{ padding: 2 }}>
+        <RecipeList recipes={recipes} />
+      </Paper>
+    </Box>
   );
 }
 

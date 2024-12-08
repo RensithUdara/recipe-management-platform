@@ -1,5 +1,6 @@
 // src/components/RecipeSearch.js
 import React, { useState } from "react";
+import { TextField, Box } from "@mui/material";
 
 function RecipeSearch() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -9,14 +10,15 @@ function RecipeSearch() {
   };
 
   return (
-    <div className="recipe-search">
-      <input
-        type="text"
-        placeholder="Search Recipes..."
+    <Box>
+      <TextField
+        label="Search Recipes"
+        variant="outlined"
+        fullWidth
         value={searchTerm}
         onChange={handleChange}
       />
-    </div>
+    </Box>
   );
 }
 
